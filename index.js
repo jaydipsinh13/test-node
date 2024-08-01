@@ -19,6 +19,10 @@ db.connect((err) => {
   }
 });
 
+app.get("/", (req, res) => {
+  res.send("Hello! from test-node");
+});
+
 app.get("/app-version", (req, res) => {
   db.query("SELECT version FROM app_versions LIMIT 1", (error, results) => {
     if (error) {
